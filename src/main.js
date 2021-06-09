@@ -1,10 +1,11 @@
-const app = new (require('kao'))
+const app = new (require('koa'))
+const router = require('./router')
 const { http, ws } = require('config').server
 const server = require('http').createServer(app.callback())
 const io = require('socket.io')(server, {cors: ws.cors})
 const bodyparser = require('koa-bodyparser')
-const router = require('./router')
 const cors = require('kcors')
+require('./middleware/sockets')(app, io)
 
 
 /* MIDDLEWARE */
