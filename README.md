@@ -1,2 +1,2 @@
 # account-manager
-handles all authentication and account recoveries processes.
+Handles all authentication and account recoveries processes.

@@ -1,0 +1,37 @@
+# NOTE: restart server for changes to take effect!
+dev_stage: development
+# dev_stage: production
+# ********** SERVER **********
+server: 
+  http:
+    protocol: http
+    hostname: localhost
+    port: 3000
+  ws:
+    port: 3000
+    cors: 
+      origens: '*'
+
+# ********** SECURITY **********
+token:
+  access: 
+    expiry: '30m'
+    secret: my-secret-access-token
+  refresh:
+    expiry: '30d'
+
+# ********** MAIL **********
+mail:
+  credentials:
+    client: gmail
+    user: chen7david@me.com
+    pass: '*******'
+  host: 'http://localhost:8080'
+  links:
+    password_recovery: '/recover-password'
+    email_verification: '/verify-email'
+    device_verification: '/verify-device'
+
+# ********** DB **********
+database:
+  production:
