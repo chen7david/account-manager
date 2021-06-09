@@ -1,6 +1,6 @@
 # NOTE: restart server for changes to take effect!
-stage: development
-# stage: production
+env: development
+# env: production
 
 # ********** SERVER **********
 server: 
