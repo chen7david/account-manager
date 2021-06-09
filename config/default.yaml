@@ -1,6 +1,7 @@
 # NOTE: restart server for changes to take effect!
 stage: development
 # stage: production
+
 # ********** SERVER **********
 server: 
   http:
@@ -21,17 +22,36 @@ token:
     expiry: '30d'
 
 # ********** MAIL **********
-mail:
-  credentials:
-    client: gmail
-    user: chen7david@me.com
-    pass: '*******'
-  host: 'http://localhost:8080'
-  links:
-    password_recovery: '/recover-password'
-    email_verification: '/verify-email'
-    device_verification: '/verify-device'
+email:
+  service: gmail
+  auth:
+    user: 'aox.mailer@gmail.com'
+    pass: Iamdavid7D
 
 # ********** DB **********
 database:
-  production:
+    client: postgresql
+    connection:
+        database: account-manager
+        host: '192.168.50.251'
+        port: 3000
+        user: admin
+        password: admin
+    migrations:
+        tableName: knex_migrations
+        directory: ./db/migrations
+    seeds:
+      directory: ./db/seeds
+    pool:
+        min: 2
+
+# ********** CLIENT **********
+server: 
+  http:
+    protocol: http
+    hostname: localhost
+    port: 8080
+  routes:
+    password_recovery: '/recover-password'
+    email_verification: '/verify-email'
+    device_verification: '/verify-device'
