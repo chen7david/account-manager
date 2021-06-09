@@ -17,9 +17,9 @@ server:
 token:
   access: 
     expiry: '30m'
-    secret: my-secret-access-token
   refresh:
     expiry: '30d'
+    secret: my-secret-refresh-token
 
 # ********** MAIL **********
 email:
