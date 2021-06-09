@@ -4,7 +4,11 @@
   "description": "handles all authentication and account recoveries processes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/main.js",
+    "dbu": "knex migrate:latest",
+    "dbd": "knex migrate:rollback",
+    "dbi": "npm run dbd && npm run dbu && npm run seed",
+    "seed": "knex seed:run"
   },
   "repository": {
     "type": "git",
