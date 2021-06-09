@@ -46,7 +46,7 @@ database:
         min: 2
 
 # ********** CLIENT **********
-server: 
+client: 
   http:
     protocol: http
     hostname: localhost
@@ -55,3 +55,4 @@ server:
     password_recovery: '/recover-password'
     email_verification: '/verify-email'
     device_verification: '/verify-device'
+    device_make_primary: '/make-primary-device'
