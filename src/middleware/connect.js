@@ -53,5 +53,5 @@ class Connect {
     }
 }
 
-module.exports = () => new Connect()
+module.exports = () => new Connect
 
