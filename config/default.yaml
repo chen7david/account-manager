@@ -1,6 +1,6 @@
 # NOTE: restart server for changes to take effect!
-dev_stage: development
-# dev_stage: production
+stage: development
+# stage: production
 # ********** SERVER **********
 server: 
   http:
