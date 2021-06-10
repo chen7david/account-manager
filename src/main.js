@@ -17,7 +17,7 @@ Object.keys(router)
     .map(key => app.use(router[key].routes()))
 
 /* SERVER */
-server.listen(http.port, () => {
+server.listen(process.env.port || http.port, () => {
     const url = require('url').format(http)
     console.log('server running at:', url)
 })
