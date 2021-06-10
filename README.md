@@ -1,5 +1,5 @@
 # account-manager
-Handles all authentication and account recoveries processes.
+Handles all authentication and account recovery processes.
 
 ### Broadcast
 
@@ -25,6 +25,11 @@ Seconds | account:login | {user, device, accessToken, refreshToken } | sends log
 Seconds | keys:updated | publicKey | broad casts public key when it is updated |
 
 ### Socket Event Listeneres
-name | key | data | description 
---- | --- | --- | --- |
-Seconds | account:deleted | 283 | 290 |
+key | param | description 
+--- | --- | --- |
+get:client:info | socketId | { useragent } |
+came:online | { userId, deviceId } | { useragent } |
+came:online | { userId, deviceId } | { useragent } |
+came:online | { userId, deviceId } | { useragent } |
+
+
