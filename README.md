@@ -34,9 +34,10 @@ check:status | deviceId | { useragent } |
 
 
 ### Socket Event Listeneres
-request | response | params | data 
+listener | emitter | params | data 
 | --- | --- | --- | --- |
-get:client:info<code>*</code> | set:client:info | deviceId:<code>str</code> | connection:<code>obj</code> |
+get:client:info | set:client:info | deviceId:<code>str</code> | connection:<code>obj</code> |
+came:online | is:online | { userId, deviceId } | cdeviceId:<code>str</code> |
 
 
 
