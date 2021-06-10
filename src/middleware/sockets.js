@@ -1,6 +1,14 @@
 const connections = require('./connect')()
 
 module.exports = (app, io) => {
+
+    /* APP EMITTERS */ 
+    app.on('keys.updated', (data) => io.sockets.emit('keys.updated', data))
+    app.on('account.deleted', (userId) => io.sockets.emit('account.deleted', userId))
+    app.on('account.login', ({socketId, loginInfo}) => {
+            io.sockets.sockets.get(socketId).emit('qr.login', loginInfo)
+    })
+
     const emit = {
         isOnline: (deviceId) => io.emit('is:online', deviceId),
         isOffline: (deviceId) => io.emit('is:offline', deviceId)

@@ -33,11 +33,12 @@ went:offline | deviceId | { useragent } |
 check:status | deviceId | { useragent } |
 
 
-### Socket Event Listeneres
+### Socket Events
 listener | emitter | params | data 
 | --- | --- | --- | --- |
 get:client:info | set:client:info | deviceId:<code>str</code> | connection:<code>obj</code> |
-came:online | is:online | { userId, deviceId } | cdeviceId:<code>str</code> |
+came:online | is:online | { userId, deviceId } | deviceId:<code>str</code> |
+<code>http</code>post:/qrlogin | account:login | {socketId, loginInfo:<code>obj</code>} | loginInfo:<code>obj</code> |
 
 
 
