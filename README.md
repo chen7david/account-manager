@@ -4,9 +4,9 @@ Handles all authentication and account recovery processes.
 #### Broadcast Events
 listener | emitter | params | data 
 | ---| --- | --- | --- |
- - | account:deleted | - | userId |
- - | account:login | - | {user, device, accessToken, refreshToken } | 
- - | keys:updated | - | publicKey | 
+| - | account:deleted | - | userId |
+| - | account:login | - | {user, device, accessToken, refreshToken } | 
+| - | keys:updated | - | publicKey | 
 
 ### Socket Events
 listener | emitter | params | data 
