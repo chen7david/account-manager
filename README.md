@@ -1,6 +1,8 @@
 # account-manager
 Handles all authentication and account recovery processes.
 
+### Sockets
+
 #### Broadcast Events
 listener | emitter | params | data 
 | ---| --- | --- | --- |
@@ -8,7 +10,7 @@ listener | emitter | params | data
 | - | account:login | - | {user, device, accessToken, refreshToken } | 
 | - | keys:updated | - | publicKey | 
 
-### Socket Events
+#### Socket Events
 listener | emitter | params | data 
 | --- | --- | --- | --- |
 get:client:info | set:client:info | deviceId:<code>str</code> | connection:<code>obj</code> |
@@ -18,7 +20,7 @@ went:offline | is:offline | deviceId:<code>str</code> | deviceId:<code>str</code
 check:status | is:online / is:offline | deviceId:<code>str</code> | deviceId:<code>str</code> |
 
 
-
+### Routes
 
 
 
