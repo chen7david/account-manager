@@ -15,7 +15,7 @@ class Auth extends Model {
 
     async renewkeys(ctx){
         // await Token.setKeys()
-        ctx.app.emit('keys.updated', Token.pubkey())
+        ctx.app.emit('keys:updated', Token.pubkey())
         ctx.body = ctx.cargo.msg('key renewal successful')
     }
     
@@ -40,7 +40,7 @@ class Auth extends Model {
         await device.logout()
         if(device.isBlocked) ctx.cargo.state('danger').msg('scanned device is blocked, login failed!').error(422)
         const token = await ctx.state.$user.spawnToken(device)
-        ctx.app.emit('account.login', {socketId, loginInfo: {
+        ctx.app.emit('account:login', {socketId, loginInfo: {
             user: ctx.state.$user,
             device: ctx.state.$device,
             accessToken: token.renderAccessToken(),

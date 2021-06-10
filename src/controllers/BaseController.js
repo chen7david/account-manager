@@ -37,7 +37,7 @@ class Controller {
     }
 
     async delete(ctx){
-        if(this.modelName == 'user') ctx.app.emit('account.deleted', ctx.state[this.modelName].userId)
+        if(this.modelName == 'user') ctx.app.emit('account:deleted', ctx.state[this.modelName].userId)
         const item = await ctx.state[this.modelName].$query().delete()
         ctx.body = ctx.cargo.state('success').payload(item).msg(`${this.modelName} deleted!`)
     }
