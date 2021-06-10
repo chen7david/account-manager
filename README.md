@@ -29,7 +29,15 @@ key | param | description
 | --- | --- | --- |
 get:client:info | socketId | { useragent } |
 came:online | { userId, deviceId } | { useragent } |
-came:online | { userId, deviceId } | { useragent } |
-came:online | { userId, deviceId } | { useragent } |
+went:offline | deviceId | { useragent } |
+check:status | deviceId | { useragent } |
+
+
+### Socket Event Listeneres
+request | response | params | data 
+| --- | --- | --- | --- |
+get:client:info<code>*</code> | set:client:info | deviceId:<code>str</code> | connection:<code>obj</code> |
+
+
 
 
