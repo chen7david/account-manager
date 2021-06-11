@@ -1,5 +1,5 @@
 const app = new (require('koa'))
-const router = require('./router')
+const router = require('./routes')
 const { http, ws } = require('config').server
 const server = require('http').createServer(app.callback())
 const io = require('socket.io')(server, {cors: ws.cors})

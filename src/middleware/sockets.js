@@ -44,5 +44,5 @@ module.exports = (app, io) => {
         })
     })
 
-
+    return connections
 }

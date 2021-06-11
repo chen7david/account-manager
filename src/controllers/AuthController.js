@@ -1,6 +1,6 @@
 const Model = require('./BaseController')
 const { User, Code, Token } = require('../models')
-const connections = require('../middleware/connections')
+const connections = require('../middleware/sockets')
 const { template, mailer } = require('../middleware/email')
 
 class Auth extends Model {
