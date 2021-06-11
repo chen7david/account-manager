@@ -10,7 +10,7 @@ class Auth extends Model {
     }
 
     async getPubKey(ctx){
-        ctx.body = ctx.cargo.payload({pubkey: Token.pubkey(), user})
+        ctx.body = ctx.cargo.payload({pubkey: Token.pubkey()})
     }
 
     async renewkeys(ctx){

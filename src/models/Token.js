@@ -1,6 +1,6 @@
 const { refresh: {secret, expiry}, access } = require('config').token
 const { Cryper } = require('cryper')
-const cryper = new Cryper(_, {expiresIn: access.expiry})
+const cryper = new Cryper({options: {expiresIn: access.expiry}})
 const Model = require('./Model')
 const JWT = require('jsonwebtoken')
 
