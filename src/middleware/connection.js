@@ -21,7 +21,7 @@ class Socket {
     }
 }
 
-class Connect {
+class Connection {
 
     constructor(){
         this.instance = null
@@ -40,8 +40,7 @@ class Connect {
         return this.connections.filter(o => !o.isOnline())
     }
 
-    add(socket, details = {}){
-        const connection = new Socket(socket, details)
+    add(connection){
         if(this.get(connection.id)) this.remove(connection.id)
         this.connections.push(connection)
         return this
@@ -53,5 +52,5 @@ class Connect {
     }
 }
 
-module.exports = () => new Connect
+module.exports = { Connection, Socket }
 

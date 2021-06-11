@@ -27,7 +27,7 @@
     "bcrypt": "^5.0.1",
     "cargo-io": "0.0.20",
     "config": "^3.3.6",
-    "cryper": "0.0.6",
+    "cryper": "0.0.5",
     "joi": "^17.4.0",
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^8.5.1",

@@ -1,5 +1,5 @@
 const { Token, User } = require('../models')
-const connections = require('./sockets')
+const { connections } = require('./sockets')
 
 module.exports = {
 

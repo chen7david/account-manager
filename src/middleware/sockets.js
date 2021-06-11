@@ -1,7 +1,8 @@
-const connections = require('./connect')()
+const { Connection, Socket } = require('./connection')
+const connections = new Connection()
 
-module.exports = (app, io) => {
-
+exports = module.exports = (app, io) => {
+    
     /* APP EMITTERS */ 
     app.on('keys:updated', (data) => io.sockets.emit('keys:updated', data))
     app.on('account:deleted', (userId) => io.sockets.emit('account:deleted', userId))
@@ -16,7 +17,8 @@ module.exports = (app, io) => {
 
     io.on('connect', (socket) => {
 
-        connections.add(socket)
+        const connection = new Socket(socket)
+        connections.add(connection)
 
         socket.on('get:client:info', (socketId) => {
             const connection = connections.get(socketId)
@@ -24,17 +26,17 @@ module.exports = (app, io) => {
         })
 
         socket.on('came:online', ({userId, deviceId}) => {
-            connections.update(socket.id, {userId, deviceId})
+            connection.update({userId, deviceId})
             emit.isOnline(deviceId)
         })
 
         socket.on('went:offline', (deviceId) => {
-            connections.update(socket.id, {userId: null, deviceId: null})
+            connection.update(socket.id, {userId: null, deviceId: null})
             emit.isOffline(deviceId)
         })
 
         socket.on('check:status', (deviceId) => {
-            connections.isOnline(deviceId) ? emit.isOnline(deviceId) : emit.isOffline(deviceId)
+            connection.isOnline(deviceId) ? emit.isOnline(deviceId) : emit.isOffline(deviceId)
         })
 
         socket.on('disconnect', () => {
@@ -43,6 +45,6 @@ module.exports = (app, io) => {
             connections.remove(socket.id)
         })
     })
-
-    return connections
 }
+
+exports.connections = connections

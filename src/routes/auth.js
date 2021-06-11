@@ -5,7 +5,7 @@ const controller = require('./../controllers/AuthController')
 router.get('/connections', controller.connections)
 router.get('/pubkey', controller.getPubKey)
 
-router.get('/renewkeys', 
+router.get('/renewkeys',
     worker.loadFromAccessToken, 
     worker.hasAnyRole('admin'), 
     controller.renewkeys
@@ -32,7 +32,7 @@ router.post('/qrlogin',
     controller.qrlogin
 )
 
-// check ...
+
 router.post('/refresh', 
     worker.loadFromRefreshToken,
     worker.loadDevice,

@@ -1,6 +1,6 @@
 const Model = require('./BaseController')
 const { User, Code, Token } = require('../models')
-const connections = require('../middleware/sockets')
+const { connections } = require('../middleware/sockets')
 const { template, mailer } = require('../middleware/email')
 
 class Auth extends Model {
@@ -64,7 +64,7 @@ class Auth extends Model {
         await mailer
             .to(ctx.state.$user.email)
             .subject('Email-Verification: Please verify this email')
-            .body(template('verify_email.html', {code:code.code}))
+            .body(template('email_verification.html', {code:code.code}))
             .send()
         ctx.body = ctx.cargo.state('success').msg(`Email verification code has been emailed to ${ctx.state.$user.email}`)
     }

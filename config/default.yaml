@@ -11,7 +11,7 @@ server:
   ws:
     port: 3000
     cors: 
-      origens: '*'
+      origin: '*'
 
 # ********** SECURITY **********
 token:
